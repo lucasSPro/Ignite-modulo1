@@ -17,3 +17,9 @@
 - [] Não deve ser possivel fazer saque em uma conta nao existente
 - [] Não deve ser possivel excluir uma conta nao existente
 - [] Não deve ser possivel fazer saque quando o saldo for insuficiente
+
+### dados da conta
+ CPF - string
+ name - string
+ id - uuid
+ statement - []
