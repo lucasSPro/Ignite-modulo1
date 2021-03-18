@@ -122,6 +122,14 @@ app.delete("/account", verifyIfExisteAccountCPF, (request, response) => {
     customers.splice(customer, 1);
 
     return response.status(201).json(customers);
+});
+
+app.get("/balance", verifyIfExisteAccountCPF, (request, response) =>{
+    const { customer } = request;
+
+    const balance = getBalance(customer.statement);
+
+    return response.status(201).json(balance);
 })
 
 app.listen(3333);
