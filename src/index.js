@@ -8,7 +8,6 @@ const custumers = [];
 
 app.post("/account", (request , response)=>{
     const { cpf, name } = request.body;
-    const id = uuidV4();
 
     const custumersAlreadyExists = custumers.some((custumer) => custumer.cpf === cpf);
 
@@ -19,11 +18,23 @@ app.post("/account", (request , response)=>{
         {
             cpf,
             name,
-            id,
+            id: uuidV4(),
             statement : []
         }
     );
     return response.status(201).send();
+});
+
+app.get("/statement/:cpf", (request, response)=>{
+    const {cpf} = request.params;
+
+    const custumer = custumers.find(custumer => custumer.cpf === cpf);
+
+    if(!custumer){
+        return response.status(400).json({error: "Custumer not found"});
+    }
+
+    return response.json(custumer.statement);
 })
 
 app.listen(3333);
