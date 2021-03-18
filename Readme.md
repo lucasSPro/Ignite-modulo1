@@ -12,8 +12,8 @@
 ### Regra de negócio
 
 - [x] Não deve ser possivel cadastrar uma conta com CPF ja existente
+- [x] Não deve ser possivel buscar extrato em uma conta nao existente
 - [] Não deve ser possivel fazer deposito em uma conta nao existente
-- [] Não deve ser possivel buscat estrato em uma conta nao existente
 - [] Não deve ser possivel fazer saque em uma conta nao existente
 - [] Não deve ser possivel excluir uma conta nao existente
 - [] Não deve ser possivel fazer saque quando o saldo for insuficiente

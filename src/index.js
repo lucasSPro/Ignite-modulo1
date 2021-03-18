@@ -6,6 +6,10 @@ app.use(express.json());
 
 const custumers = [];
 
+function verifyIfExisteAccountCPF(request, response, next){
+
+}
+
 app.post("/account", (request , response)=>{
     const { cpf, name } = request.body;
 
@@ -25,8 +29,8 @@ app.post("/account", (request , response)=>{
     return response.status(201).send();
 });
 
-app.get("/statement/:cpf", (request, response)=>{
-    const {cpf} = request.params;
+app.get("/statement", (request, response)=>{
+    const {cpf} = request.headers;
 
     const custumer = custumers.find(custumer => custumer.cpf === cpf);
 
